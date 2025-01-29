@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+
+* {
+  margin: 0;
+}
+
+span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2f74c0;
+  width: 100vw;
+  height: 100vh;
+}
+span h4 {
+  font-family: "Neucha", serif;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: white;
+  margin-top: 2rem;
+}
+form {
+  margin-top: 1.5rem;
+  width: 50%;
+}
+input {
+  padding: 1rem;
+  width: 50%;
+  position: relative;
+  left: 10rem;
+  border-radius: 2rem;
+  border: none;
+  box-shadow: inset 0px 0px 5px black;
+}
+input:focus {
+  box-shadow: 0px 0px 10px 1000px rgb(0, 0, 0, 0.5);
+}
+.add-todo-button {
+  position: absolute;
+  margin-left: 7rem;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background-color: #2f74c0;
+  color: white;
+  transition: 0.2s all;
+  border: none;
+  box-shadow: 0px 0px 7px black;
+}
+
+.add-todo-button:hover {
+  transform: scale(0.8);
+}
+.display-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg");
+}
+.display-container button {
+  background-color: green;
+  border-radius: 0.5rem;
+  color: white;
+  border: none;
+  font-size: 10px;
+  padding: 0 0.5rem;
+}
+textarea {
+  resize: none;
+  border: none;
+  border-radius: 0.5rem;
+  text-align: center;
+  background: none;
+  padding-top: 10px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 700px) {
+  .display-container {
+    width: 100%;
+  }
+}
+.display-todo-container {
+  max-height: 50vh;
+  overflow: scroll;
+  padding: 2rem;
+}
