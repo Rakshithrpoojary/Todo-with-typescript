@@ -9,6 +9,7 @@ const DisplayTodo: React.FC<Props> = ({ todo, Edit, Delete }) => {
   const [set, reset] = useState<number[]>([]);
   return (
     <div className="display-todo-container">
+      {todo.length == 0 && <h3>No Todods</h3>}
       {todo.map((todo: string, index: number) => (
         <div key={index} className="display-container">
           <textarea
