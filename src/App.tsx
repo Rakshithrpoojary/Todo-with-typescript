@@ -8,13 +8,14 @@ const App: React.FC = () => {
   const [todo, setTodo] = useState<string[]>(data ? JSON.parse(data) : []);
   const [Editindex, noindex] = useState<number | null>(null);
   const a = useRef<HTMLInputElement>(null);
+
   useEffect(() => {
     localStorage.setItem("todo", JSON.stringify(todo));
   }, [todo]);
+
   const Submittodo = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     a.current?.blur();
-
     if (a.current?.value) {
       const v: string = a.current.value;
       if (Editindex !== null) {
@@ -23,7 +24,7 @@ const App: React.FC = () => {
         );
         noindex(null);
       } else {
-        setTodo((prev): string[] => [...prev, v]);
+        setTodo((prev): string[] => [v, ...prev]);
       }
       a.current.value = "";
     }
@@ -35,9 +36,11 @@ const App: React.FC = () => {
       a.current.value = todo[id];
     }
   };
+
   const Delete = (id: number) => {
     setTodo(todo.filter((todo, index) => index !== id));
   };
+
   return (
     <div>
       <span>
