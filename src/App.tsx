@@ -38,7 +38,7 @@ const App: React.FC = () => {
   };
 
   const Delete = (id: number) => {
-    setTodo(todo.filter((todo, index) => index !== id));
+    setTodo(todo.filter((_, index) => index !== id));
   };
 
   return (
